@@ -1,0 +1,64 @@
+{
+    "name": "@dataplain/timeoutmessage",
+    "version": "0.1.0",
+    "description": "Vue component to display ephemeral text and a countdown progress bar.",
+    "author": {
+        "name": "Paulo Sergio Klaus",
+        "email": "contato@pauloklaus.com.br"
+    },
+    "repository": "https://github.com/dataplain/timeoutmessage",
+    "bugs": "https://github.com/dataplain/timeoutmessage/issues",
+    "keywords": [
+        "vue",
+        "vuejs",
+        "notify",
+        "popup",
+        "message"
+    ],
+    "license": "GPLv3",
+    "private": false,
+    "scripts": {
+        "build": "vue-cli-service build --target lib --name TimeoutMessage src/index.js; rm ./dist/demo.html",
+        "lint": "vue-cli-service lint"
+    },
+    "main": "dist/TimeoutMessage.umd.js",
+    "browser": "dist/TimeoutMessage.common.js",
+    "unpkg": "dist/TimeoutMessage.umd.min.js",
+    "jsDelivr": "dist/TimeoutMessage.umd.min.js",
+    "files": [
+        "dist",
+        "src"
+    ],
+    "dependencies": {
+        "core-js": "^3.14.0",
+        "vue": "^2.6.14"
+    },
+    "devDependencies": {
+        "@vue/cli-plugin-babel": "~4.5.0",
+        "@vue/cli-plugin-eslint": "~4.5.0",
+        "@vue/cli-service": "~4.5.0",
+        "babel-eslint": "^10.1.0",
+        "eslint": "^6.7.2",
+        "eslint-plugin-vue": "^6.2.2",
+        "vue-template-compiler": "^2.6.14"
+    },
+    "eslintConfig": {
+        "root": true,
+        "env": {
+            "node": true
+        },
+        "extends": [
+            "plugin:vue/essential",
+            "eslint:recommended"
+        ],
+        "parserOptions": {
+            "parser": "babel-eslint"
+        },
+        "rules": {}
+    },
+    "browserslist": [
+        "> 1%",
+        "last 2 versions",
+        "not dead"
+    ]
+}
