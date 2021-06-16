@@ -61,12 +61,13 @@ new Vue({
 ```vue
 <template>
     <div>
-        <my-timeout-message message="Too easy." timeout="3" @timesup="showNextProgressbar" />
+        <my-timeout-message value="Too easy." timeout="3" @timesup="showNextProgressbar" />
 
-        <my-timeout-message :message="anotherMessage" barClass="my-progress-color" textClass="my-progress-text" />
+        <!-- if you set the message using a variable via v-model, it will be set to empty when times out -->
+        <my-timeout-message v-model="anotherMessage" barClass="my-progress-color" textClass="my-progress-text" />
 
         <!-- you can use predefined classes from your preferred framework, such as bootstrap -->
-        <my-timeout-message message="It's also very simple." barClass="bg-primary" textClass="text-primary" />
+        <my-timeout-message value="It's also very simple." barClass="bg-primary" textClass="text-primary" />
     </div>
 </template>
 

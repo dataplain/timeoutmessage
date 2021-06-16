@@ -2,7 +2,7 @@
     <transition name="progress">
         <div v-if="countDown" class="progress-container">
             <div>
-                <div :class="textClass">{{ showMessage }}</div>
+                <div :class="textClass">{{ message }}</div>
                 <div class="progress-transition" :class="barClass" :style="{ width: barWidth, height: barHeight }" />
             </div>
         </div>
@@ -29,7 +29,7 @@ export default {
             type: String,
             default: "3px"
         },
-        message: {
+        value: {
             type: String,
             default: ""
         }
@@ -38,7 +38,7 @@ export default {
         return {
             interval: null,
             countDown: 0,
-            showMessage: this.message
+            message: this.value
         }
     },
     computed: {
@@ -48,32 +48,27 @@ export default {
         }
     },
     watch: {
-        message(newMessage) {
-            this.updateCountDown(newMessage);
-        }
-    },
-    created() {
-        this.updateCountDown(this.message);
-    },
-    methods: {
-        updateCountDown(message) {
-            clearInterval(this.interval);
+        value(message) {
+            if (this.interval !== null) {
+                clearInterval(this.interval);
+                this.interval = null;
+            }
 
             if (message == "") {
-                this.showMessage = "";
+                this.message = "";
                 this.countDown = 0;
             }
             else {
-                this.showMessage = message;
+                this.message = message;
                 this.countDown = (typeof this.timeout === "number" ? this.timeout : parseInt(this.timeout)) + 1;
                 this.interval = setInterval(() => {
                     if (this.countDown > 0)
                         this.countDown--;
                     else
-                        this.$emit("timesup");
+                        this.$emit("input", "");
                 }, 1000);
             }
-        },
+        }
     }
 }
 </script>
