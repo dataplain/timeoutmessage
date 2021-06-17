@@ -1,6 +1,6 @@
 {
     "name": "@dataplain/timeoutmessage",
-    "version": "0.1.1",
+    "version": "0.1.2",
     "description": "Vue component to display ephemeral text and a countdown progress bar.",
     "author": {
         "name": "Paulo Sergio Klaus",

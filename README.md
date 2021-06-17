@@ -33,7 +33,7 @@ Create the src/plugins/timeoutmessage.js:
 ```javascript
 import Vue from "vue";
 import TimeoutMessage from "@dataplain/timeoutmessage";
-import "@dataplain/TimeoutMessage/dist/TimeoutMessage.css";
+import "@dataplain/timeoutmessage/dist/TimeoutMessage.css";
 
 Vue.use(TimeoutMessage, { TimeoutMessageName: "MyTimeoutMessage" });
 ```
