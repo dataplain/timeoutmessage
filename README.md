@@ -100,11 +100,17 @@ export default {
 
 Property | Description | Required | Default
 -|-|-|-
-message | Text message to show | no |
+v-model or value | Text message to show | no |
 timeout | Time in seconds | no | 5
 barHeight | Bar height | no | 3px
 barClass | CSS Class to apply on progressbar | no |
 textClass | CSS Class to apply on message | no |
+
+## Events
+
+Event | Description
+-|-
+input | To clear the message when time runs out
 
 ## Using in the browser
 
