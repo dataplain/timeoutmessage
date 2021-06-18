@@ -49,6 +49,14 @@ export default {
     },
     watch: {
         value(message) {
+            this.updateCountDown(message);
+        }
+    },
+    created() {
+        this.updateCountDown(this.value);
+    },
+    methods: {
+        updateCountDown(message) {
             if (this.interval !== null) {
                 clearInterval(this.interval);
                 this.interval = null;
